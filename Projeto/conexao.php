@@ -8,11 +8,11 @@ class db{
 	
 	private $senha = '';
 	
-	private $database = 'cadastro';
+	private $database = 'dbprojetofinal';
 
 	public function conecta_mysql(){
 
-		$con = mysqli_connect($this->host, $this->usuario, $this->senha, $this->databse);
+		$con = mysqli_connect($this->host, $this->usuario, $this->senha, $this->database);
 	
 		return $con;
 	}

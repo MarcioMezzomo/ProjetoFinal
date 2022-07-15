@@ -43,11 +43,11 @@
 				<ul class="nav navbar-nav navbar-right">
 				<!--	<li><a href="doacao.php">Quero Doar</a></li> -->
 					<li><a href="cadastroVoluntario.php">Seja Voluntário</a></li>
-					<li><a href="cadastroDoador.php">Quero Doar</a></li>
-					<li><a href="sobre.php">Sobre Nós</a></li>
+                    <li><a href="cadastroDoador.php">Quero Doar</a></li>
+					<li><a href="index.php">Página Inicial</a></li>
 					<li><a href="contato.php">Contato</a></li>
 				<!--	<li><a href="adicionarUsuario.php">Cadastrar-se</a></li> -->
-					
+				
 					<li><a href="loginUsuario.php">Acesso Restrito</a></li>
 					</li>
 				</ul>
@@ -69,19 +69,19 @@
 				</div>
 				<div class="col-sm-9">
 
-					<h2>Projeto Elo Soliário</h2><br>
+					<h2>Sobre Nós</h2><br>
 					<p>
-						Doe roupas, móveis e outros objetos em bom estado. <br><br>
+					A turma 3INFO1 formada por Fernando, Iuri, Marcio e Willian, orientados pela Profª Naura, desenvolveu este projeto 
+                    para a conclusão do Curso Técnico de Informática para Internet, no Cólegio Estadual Protásio Alves, em Julho de 2022. 
+                    A idéia inicial partiu de Fernando, após encontros utilizando a técnica de Brainstorming. <br><br>
+“O brainstorming ou tempestade de ideias, mais que uma técnica de dinâmica de grupo, é uma atividade desenvolvida para explorar a potencialidade 
+criativa de um indivíduo ou de um grupo - criatividade em equipe - colocando-a a serviço de objetivos pré-determinados.” (Fonte:Wikipedia) <br><br>
 
-						As doações serão destinadas a familias e pessoas em situações de emergência e vulnerabilidade social.<br><br>
+A partir do contexto visualizado e estimulado pela Profª Naura, elaboramos o escopo do projeto e o entendimento de quais ferramentas 
+seriam necessárias para alcançar o resultado que satisfizesse o objetivo principal do projeto.<br><br>
 
-						Para agendar uma doação preencha os dados do formulário <a href="cadastroDoador.php">clicando aqui</a> .<br><br>
-
-						Você também pode se tornar um voluntário para junto a nós transformar positivamente a vida de muitas pessoas. <a href="cadastroVoluntario.php">Quero ser voluntário</a>.<br><br>
-
-						Somos uma ONG sem fins lucrativos que visa contribuir para a construção de uma sociedade mais justa e igualitária.<br><br>
-
-						Para maiores informações entre em contato conosco!</p>
+Este modelo de site esta em evolução, foi pensado e desenvolvido com muita dedicação e tendo a noção de sua importância perante
+ a sociedade, sendo uma ferramenta agregadora no que se refere a projetos sociais, mais especificamente no que tange a doações e serviços voluntários. </p>
 				</div>
 			</div>
 

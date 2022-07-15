@@ -23,7 +23,7 @@ $doacao3 = filter_input(INPUT_POST, 'doacao3');
 $descricao = filter_input(INPUT_POST, 'descricao');
 $dta_doacao = filter_input(INPUT_POST, 'dta_doacao');
 
-if ($nome && $email && $endereco && $cidade && $estado && $cep && $email && $telefone) {
+if ($nome && $email && $endereco && $cidade && $estado && $cep && $email && $telefone && $doacao1 && $doacao2 && $doacao3) {
     $sql = "SELECT * FROM doador WHERE nome = '$nome' AND email = '$email'";
     $sql = $pdo->query($sql);
     $sql->bindvalue('nome', $nome);
@@ -67,6 +67,7 @@ if ($nome && $email && $endereco && $cidade && $estado && $cep && $email && $tel
 
     <!-- jquery - link cdn -->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 
     <!-- bootstrap - link cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -85,7 +86,7 @@ if ($nome && $email && $endereco && $cidade && $estado && $cep && $email && $tel
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <img src="imagens/logo_Elo.png" />
+                <img src="imagens/Elo_solidario.png"  />
             </div>
 
             <div id="navbar" class="navbar-collapse collapse">
@@ -108,11 +109,11 @@ if ($nome && $email && $endereco && $cidade && $estado && $cep && $email && $tel
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="nome">Nome&nbsp;</label>
-                    <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome" required="required" />
+                    <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome completo" required="required" />
                 </div>
                 <div class="form-group col-md-6">
                     <label for="endereco">Endereço&nbsp;</label>
-                    <input type="text" name="endereco" class="form-control" id="endereco" placeholder="Endereço" required="required" />
+                    <input type="text" name="endereco" class="form-control" id="endereco" placeholder="Rua, nº" required="required" />
                 </div>
             </div>
             <div class="form-row">
@@ -122,26 +123,27 @@ if ($nome && $email && $endereco && $cidade && $estado && $cep && $email && $tel
                 </div>
                 <div class="form-group col-md-6">
                     <label for="estado">Estado&nbsp;</label>
-                    <input type="text" name="estado" class="form-control" id="estado" placeholder="Estado" required="required" />
+                    <input type="text" name="estado" class="form-control" id="estado" placeholder="Ex: RS" required="required" />
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="cep">CEP&nbsp;</label>
-                    <input type="text" name="cep" class="form-control" id="cep" placeholder="CEP" required="required"/>
+                    <input type="text" name="cep" minlength="10" maxlength="10" onkeypress="$(this).mask('00.000-000')" class="form-control" id="cep" placeholder="CEP" required="required"/>
                 </div>
             <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="email">e-mail&nbsp;</label>
-                        <input type="e-mail" name="email" class="form-control" id="email" placeholder="e-mail" required="required"/>
+                        <label for="email">E-mail&nbsp;</label>
+                        <input type="e-mail" name="email" class="form-control" id="email" placeholder="Digite seu melhor e-mail" required="required"/>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="telefone">Telefone&nbsp;</label>
-                        <input type="text" name="telefone" class="form-control" id="telefone" placeholder="Telefone" required="required" />
+                        <input type="text" name="telefone" onkeypress="$(this).mask('(00) 00000-0000')" class="form-control" id="telefone" placeholder="( )" required="required" />
                     </div>
                     <div class="form-group col-md-6">
                         <label for="dta_doacao">Data&nbsp;</label>
-                        <input type="date" name="dta_doacao" class="form-control" id="dta_doacao" />
+                        <input type="date" name="dta_doacao" class="form-control" id="dta_doacao" placeholder="dd-mm-yyyy" value=""
+        min="1997-01-01" max="2030-12-31"/>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="doacao1">Doação</label>
@@ -220,13 +222,13 @@ if ($nome && $email && $endereco && $cidade && $estado && $cep && $email && $tel
                     </div>
                     <div class="form-group col-md-6">
                     <label for="descricao">Descrição da Doação</label>
-                        <textarea class="form-control" id="descricao" name="descricao" placeholder="Descrição dos itens"></textarea>
+                        <textarea class="form-control" id="descricao" name="descricao" placeholder="Infome brevemente a descrição dos itens, e qual melhor horário para a coleta"></textarea>
                     </div>
                 </div><br><br>
                 <div class="form-group col-md-6">
                 <input type="submit" class="btn btn-primary " value="Cadastrar" onclick="confirmacao()"> 
                 <a href="index.php" class="btn btn-primary "> Voltar </a>
-                <a href="sair.php" class="btn btn-primary  "> sair </a>
+
                 <script>function confirmacao(){  
                     alert("Seu cadastro foi realizado com sucesso!");            
                 } </script>    

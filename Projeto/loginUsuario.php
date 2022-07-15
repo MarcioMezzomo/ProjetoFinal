@@ -17,7 +17,7 @@
 					
 					$dado = $sql->fetch(PDO::FETCH_ASSOC);
 				
-					if($dado['email'] == "")
+					if($dado['email'] == "email")
 					{
 						session_start();
 						$_SESSION['email'] = $dado['email'];
@@ -35,7 +35,7 @@
 					
 				
 				}else{
-						header("Location: login.php");
+						header("Location: loginUsuario.php");
 						exit;
 				}
 				
@@ -97,7 +97,7 @@
 			<div class="form-group">	
 				<button type="submit" class="btn btn-primary form-control">Entrar</button> 
 			</div>
-				<a href="esqueci.php">Esqueci minha senha?</a>
+				<a href="esqueci.php">Esqueci minha senha</a>
 				</form>
 			</div>
 			<div class="col-md-4"></div>
@@ -114,7 +114,7 @@
 
 	    		<blockquote class="blockquote text-center">
 				<h4>PROJETO FINAL 3 INFO 1 - COLÉGIO PROTÁSIO ALVES</h4>
-  			<h5><strong>Todos os direitos reservados - desenvolvido por 3 INFO 1<br></strong></h5>
+  			<h5><strong>&copy; Desenvolvido por 3 INFO 1<br></strong></h5>
 				</blockquote>
 
 	    	</footer>

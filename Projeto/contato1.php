@@ -1,15 +1,3 @@
-<?php
-    require 'config.php';
-
-/*    session_start();
-    if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
-        //echo 'Area restrita';
-    }else{
-        header("Location: login.php");
-        exit;
-    }*/
-?>
-
 <!DOCTYPE HTML>
 <html lang="pt-br">
 	<head>
@@ -37,7 +25,7 @@
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	          </button>
-	          <img src="imagens/logo_Elo.png" />
+	          <img src="imagens/Elo_solidario.png" />
 	        </div>
 	        
 	        <div id="navbar" class="navbar-collapse collapse">
@@ -52,31 +40,32 @@
 	    <div class="container">
 	    	
 	    <br/>
- 
-		<div class="col-md-4"></div>
-	    <div class="col-md-4">
 
-			<h4>Junte-se a nós para juntos construírmos um mundo melhor!</h4> 
-			<br/>
-			<form method="POST" action="adicionarUsuario_action.php">	
-    			<div class="form-group">
-		<!--	<label>Nome:</label> --> 
-			<input type="text" class="form-control" name="nome" placeholder="Nome" required="required"/>
+	    	<div class="col-md-4"></div>
+	    	<div class="col-md-4">
+	    		<h4>Preencha os dados do formulário e em breve entraremos em contato.</h4>
+	    		<br/>
+				<form method="post" action="validar.php" id="doadores">
+					<div class="form-group">
+					<!--<label for="nome">Nome</label> -->
+						<input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" required="requiored">
+					</div>
+
+					<div class="form-group">
+						<input type="email" class="form-control" id="email" name="email" placeholder="Email" required="requiored">
+					</div>
+
+					<div class="form-group">
+						<input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone" required="requiored">
+					</div>
+					<div class="form-group">
+						<textarea class="form-control" id="message-text" name="mensagem" placeholder="Mensagem"></textarea>
+         			</div>
+
+					<button type="submit" class="btn btn-primary form-control">Enviar</button>
+				</form>
 			</div>
-			    <div class="form-group">	
-		<!--	<label>E-mail: </label> --> 
-			<input type="email" class="form-control" name="email" placeholder="E-mail" required="required"/>
-				</div>
-    			<div class="form-group">
-		<!--	<label>Senha:</label> --> 
-			<input type="password" class="form-control" name="senha" placeholder="Senha" required="required"/>
-			</div>
-			<a><input type="submit" value="Cadastrar" class="btn btn-primary form-control"/></a>
-			
-	
-		</form>
-		</div>
-		<div class="col-md-4"></div>
+			<div class="col-md-4"></div>
 
 			<div class="clearfix"></div>
 			<br/>

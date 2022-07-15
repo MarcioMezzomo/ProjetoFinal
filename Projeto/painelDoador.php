@@ -17,6 +17,11 @@ $sql = $pdo->query("SELECT * FROM doador");
 if ($sql->rowCount() > 0) {
   $lista = $sql->fetchAll(PDO::FETCH_ASSOC);
 }
+$lista2 = [];
+$sql = $pdo->query("SELECT * FROM voluntario");
+if ($sql->rowCount() > 0) {
+  $lista2 = $sql->fetchAll(PDO::FETCH_ASSOC);
+}
 
 ?>
 
@@ -48,7 +53,7 @@ if ($sql->rowCount() > 0) {
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <img src="imagens/logo_Elo.png" />
+        <img src="imagens/Elo_solidario.png" />
       </div>
 
       <div id="navbar" class="navbar-collapse collapse">
@@ -60,8 +65,8 @@ if ($sql->rowCount() > 0) {
     </div>
   </nav>
 
-  <div class="container">
-    <h4> Cadastro de Doador </h4>
+  <!-- <div class="container"> -->
+    <h4> Cadastro de Doadores </h4>
     <table border='1' width='100%' class="table table-hover">
       <tr>
         <th>ID </th>
@@ -72,6 +77,11 @@ if ($sql->rowCount() > 0) {
         <th>CEP</th>
         <th>e-mail</th>
         <th>Telefone</th>
+        <th>Doação</th>
+        <th>Doação</th>
+        <th>Doação</th>
+        <th>Descrição</th>
+        <th>Data</th>
         <th>AÇÕES</th>
       </tr>
       <?php foreach ($lista as $dados) : ?>
@@ -85,39 +95,45 @@ if ($sql->rowCount() > 0) {
           <td> <?= $dados['cep']; ?> </td>
           <td> <?= $dados['email']; ?> </td>
           <td> <?= $dados['telefone']; ?> </td>
-          <td><a href="editarDoador.php?idDoador=<?= $dados['idDoador']; ?>">[Editar]</a> <a href="excluirCliente.php?idDoador=<?= $dados['idDoador']; ?>" onclick="return confirm('Tem certeza que deseja excluir?')">[Excluir]</a> </td>
+          <td> <?= $dados['doacao1']; ?> </td>
+          <td> <?= $dados['doacao2']; ?> </td>
+          <td> <?= $dados['doacao3']; ?> </td>
+          <td> <?= $dados['descricao']; ?> </td>
+          <td> <?= $dados['dta_doacao']; ?> </td>
+          <td><a href="editarDoador.php?idDoador=<?= $dados['idDoador']; ?>">[Editar]</a> <a href="excluirDoador.php?idDoador=<?= $dados['idDoador']; ?>" onclick="return confirm('Tem certeza que deseja excluir?')">[Excluir]</a> </td>
         </tr>
       <?php endforeach; ?>
-
-      <!-- <?php
-            $sql = "SELECT doador.idDoador, doador.nome, doador.endereco, doador.cidade, doador.estado, doador.cep, doador.email, doador.telefone FROM doador ";
-            $sql = $pdo->query($sql);
-            if ($sql->rowCount() > 0) {
-              foreach ($sql->fetchAll() as $dados) {
-                echo '<tr>';
-                echo '<td>' . $dados['idDoador'] . '</td>';
-                echo '<td>' . $dados['nome'] . '</td>';
-                echo '<td>' . $dados['endereco'] . '</td>';
-                echo '<td>' . $dados['cidade'] . '</td>';
-                echo '<td>' . $dados['estado'] . '</td>';
-                echo '<td>' . $dados['cep'] . '</td>';
-                echo '<td>' . $dados['cpf'] . '</td>';
-                echo '<td>' . $dados['email'] . '</td>';
-                echo '<td>' . $dados['telefone'] . '</td>';
-                echo '</tr>';
-              }
-            } else {
-              echo 'Não há registro no banco de dado';
-            }
-
-            ?> -->
-
     </table>
+    <h4> Cadastro de Voluntarios </h4>
+    <table border='1' width='100%' class="table table-hover">
+      <tr>
+        <th>ID </th>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Cidade</th>
+        <th>Estado</th>
+        <th>CEP</th>
+        <th>e-mail</th>
+        <th>Telefone</th>
+        <th>AÇÕES</th>
+      </tr>
+      <?php foreach ($lista2 as $dados2) : ?>
+        <tr>
+          <!--  <?php echo $dados2['id']; ?> -->
+          <td> <?= $dados2['idVoluntario']; ?> </td>
+          <td> <?= $dados2['nome']; ?> </td>
+          <td> <?= $dados2['endereco']; ?> </td>
+          <td> <?= $dados2['cidade']; ?> </td>
+          <td> <?= $dados2['estado']; ?> </td>
+          <td> <?= $dados2['cep']; ?> </td>
+          <td> <?= $dados2['email']; ?> </td>
+          <td> <?= $dados2['telefone']; ?> </td>
+     
+          <td><a href="editarVoluntario.php?idVoluntario=<?= $dados2['idVoluntario']; ?>">[Editar]</a> <a href="excluirVoluntario.php?idVoluntario=<?= $dados2['idVoluntario']; ?>" onclick="return confirm('Tem certeza que deseja excluir?')">[Excluir]</a> </td>
+        </tr>
+      <?php endforeach; ?>
+      </table>
 
-  </div>
-
-
-  </div>
 
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<div class="container">
@@ -127,7 +143,7 @@ if ($sql->rowCount() > 0) {
 
 	    		<blockquote class="blockquote text-center">
 				<h4>PROJETO FINAL 3 INFO 1 - COLÉGIO PROTÁSIO ALVES</h4>
-  			<h5><strong>Todos os direitos reservados - desenvolvido por 3 INFO 1<br></strong></h5>
+  			<h5><strong>&copy; Desenvolvido por 3 INFO 1<br></strong></h5>
 				</blockquote>
 
 	    	</footer>
